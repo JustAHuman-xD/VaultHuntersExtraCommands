@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 
 import iskallia.vault.core.vault.modifier.registry.VaultModifierRegistry;
 import iskallia.vault.core.vault.pylon.PylonBuff;
-import lv.id.bonne.vaulthunters.extracommands.ExtraCommands;
 import net.minecraft.nbt.TagParser;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.ForgeConfigSpec;
@@ -191,27 +190,6 @@ public class Configuration
 
         builder.pop();
 
-        builder.push("Player Login Protection");
-
-        this.maxDistance =
-            builder.comment("This option allows to specify distance player needs to move for timer to auto-start.",
-                    "Default value is: 5").
-                define("maxDistance", 5);
-
-        this.loginTimerStop =
-            builder.comment("This option allows to enable stopping vault timer while player is loging into vault.",
-                    "This option affects only vaults with 1 player in it.",
-                    "Default value is: false").
-                define("loginTimeProtection", false);
-
-        this.playerTargetProtection =
-            builder.comment("This option allows to prevent other entities to target player while he is in login protection.",
-                    "This option works in all vaults.",
-                    "Default value is: false").
-                define("playerTargetingProtection", false);
-
-        builder.pop();
-
         Configuration.GENERAL_SPEC = builder.build();
     }
 
@@ -325,24 +303,6 @@ public class Configuration
     }
 
 
-    public boolean getLoginTimerStop()
-    {
-        return this.loginTimerStop.get();
-    }
-
-
-    public int getMaxDistance()
-    {
-        return this.maxDistance.get() * this.maxDistance.get();
-    }
-
-
-    public boolean getPlayerTargetProtection()
-    {
-        return this.playerTargetProtection.get();
-    }
-
-
 // ---------------------------------------------------------------------
 // Section: Variables
 // ---------------------------------------------------------------------
@@ -387,21 +347,6 @@ public class Configuration
      * The config value for changing main command tag.
      */
     private final ForgeConfigSpec.ConfigValue<String> mainCommandTag;
-
-    /**
-     * The config value which indicates if timer must be stopped while player is login to server.
-     */
-    private final ForgeConfigSpec.ConfigValue<Boolean> loginTimerStop;
-
-    /**
-     * The config value which allows to specify distance that player should move for timer to autostart.
-     */
-    private final ForgeConfigSpec.ConfigValue<Integer> maxDistance;
-
-    /**
-     * The config value which allows to prevent other entities to target player entity.
-     */
-    private final ForgeConfigSpec.ConfigValue<Boolean> playerTargetProtection;
 
     /**
      * The general config spec.

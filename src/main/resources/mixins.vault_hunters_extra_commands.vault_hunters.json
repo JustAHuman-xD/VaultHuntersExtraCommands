@@ -8,7 +8,6 @@
     "MixinClassicListenersLogic",
     "MixinListener",
     "MixinSpeedrunCrystalObjective",
-    "MixinVault",
     "MixinVirtualWorld",
     "accessors.AngelBlockAccessor",
     "accessors.BountyDataAccessor",

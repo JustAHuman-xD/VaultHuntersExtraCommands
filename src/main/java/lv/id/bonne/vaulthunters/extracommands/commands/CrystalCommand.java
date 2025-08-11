@@ -353,14 +353,20 @@ public class CrystalCommand
         COMPOUND(new CompoundCrystalObjective()),
         ELIXIR(new ElixirCrystalObjective()),
         EMPTY(new EmptyCrystalObjective()),
+        GREED(new GreedCrystalObjective()),
         HERALD(new HeraldCrystalObjective()),
         MONOLITH(new MonolithCrystalObjective()),
         NULL(NullCrystalObjective.INSTANCE),
-        OFFERING(new OfferingBossCrystalObjective()),
         PARADOX(new ParadoxCrystalObjective()),
+        PERSONAL(new PersonalCrystalObjective()),
         POLL(new PoolCrystalObjective()),
+        PVP(new PvPCrystalObjective()),
+        RAID(new RaidCrystalObjective()),
+        ROYALE(new RoyaleCrystalObjective()),
+        ROYALE_PVP(new RoyalePvPCrystalObjective()),
         SCAVENGER(new ScavengerCrystalObjective()),
-        SPEEDRUN(new SpeedrunCrystalObjective(IntRoll.ofConstant(5), 0));
+        SPEEDRUN(new SpeedrunCrystalObjective(IntRoll.ofConstant(5), 0)),
+        RUNEBOSS(new VaultRuneBossCrystalObjective());
 
         Objective(CrystalObjective objective)
         {
